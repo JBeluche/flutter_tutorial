@@ -24,6 +24,15 @@ class _WidgetTreeState extends State<WidgetTree> {
         appBar: AppBar(
           title: const Text('My First App'),
           backgroundColor: Colors.teal[700],
+          actions: [
+            IconButton(
+              icon: Icon(isDarkModeNotifier.value ? Icons.light_mode : Icons.dark_mode),
+              onPressed: () {
+                isDarkModeNotifier.value = !isDarkModeNotifier.value;
+                setState(() {});
+              },
+            ),
+          ],
         ),
         body: ValueListenableBuilder(
           valueListenable:  selectedPageNotifier,
