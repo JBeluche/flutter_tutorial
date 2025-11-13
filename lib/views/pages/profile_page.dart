@@ -10,6 +10,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController nameController = TextEditingController();
   bool? isChecked = false;
+  bool isSwitched = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -45,6 +46,16 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
+          Switch(value: isSwitched, onChanged: (  bool value) {
+            setState(() {
+              isSwitched = value;
+            });
+          }),
+          SwitchListTile(value: isSwitched, onChanged: ( bool value) {
+            setState(() {
+              isSwitched = value;
+            });
+          }, title: const Text('Enable Notifications')),
         ],
       ),
     );
