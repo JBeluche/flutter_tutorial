@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/data/constants.dart';
 import 'package:flutter_tutorial/views/widgets/here_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -22,11 +23,11 @@ class HomePage extends StatelessWidget {
                   children: [
                     Text(
                       'This is a card inside the home page.',
-                      style: TextStyle(fontSize: 16.0),
+                      style: KTextStyle.titleTextStyle,
                     ),
                     Text(
                       'Description of the card content goes here.',
-                      style: TextStyle(fontSize: 16.0),
+                      style: KTextStyle.descriptionText,
                     ),
                   ],
                 ),
