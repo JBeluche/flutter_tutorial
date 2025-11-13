@@ -77,9 +77,15 @@ class _ProfilePageState extends State<ProfilePage> {
               min: 0,
               max: 100,
             ),
-            GestureDetector(
+            InkWell(
+              splashColor: Colors.teal,
               onTap: () => print('Image Tapped'),
-              child: Image.asset('assets/images/man.jpg')),
+              child: Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.white70,
+              ),
+            )
           ],
         ),
       ),
