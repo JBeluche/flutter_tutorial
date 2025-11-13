@@ -33,6 +33,7 @@ class _WidgetTreeState extends State<WidgetTree> {
           ),
           IconButton(
             onPressed: () {
+              // Navigator.pushReplacement( <-- this would replace the current page
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => SettingsPage()),
