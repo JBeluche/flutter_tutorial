@@ -28,7 +28,7 @@ class _ProfilePageState extends State<ProfilePage> {
               onEditingComplete: () => setState(() {}),
             ),
             Text(nameController.text),
-      
+
             Checkbox.adaptive(
               tristate: true,
               value: isChecked,
@@ -77,7 +77,9 @@ class _ProfilePageState extends State<ProfilePage> {
               min: 0,
               max: 100,
             ),
-            Image.asset('assets/images/man.jpg'),
+            GestureDetector(
+              onTap: () => print('Image Tapped'),
+              child: Image.asset('assets/images/man.jpg')),
           ],
         ),
       ),
