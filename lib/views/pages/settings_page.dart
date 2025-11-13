@@ -19,6 +19,13 @@ class _SettingsPageState extends State<SettingsPage> {
       appBar: AppBar(
         title: const Text('Settings Page'),
         backgroundColor: Colors.teal[700],
+        //Pop example
+        // leading: BackButton(
+        //   onPressed: () {
+        //     Navigator.pop(context);
+        //   },
+        // ),
+        // automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
