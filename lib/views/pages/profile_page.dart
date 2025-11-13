@@ -27,7 +27,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           Text(nameController.text),
           
-          Checkbox(
+          Checkbox.adaptive(
             tristate: true,
             value: isChecked,
             onChanged: (bool? value) {
@@ -36,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          CheckboxListTile(
+          CheckboxListTile.adaptive(
             tristate: true,
             title: const Text('Accept Terms'),
             value: isChecked,
@@ -46,12 +46,12 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          Switch(value: isSwitched, onChanged: (  bool value) {
+          Switch.adaptive(value: isSwitched, onChanged: (  bool value) {
             setState(() {
               isSwitched = value;
             });
           }),
-          SwitchListTile(value: isSwitched, onChanged: ( bool value) {
+          SwitchListTile.adaptive(value: isSwitched, onChanged: ( bool value) {
             setState(() {
               isSwitched = value;
             });
