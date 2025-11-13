@@ -5,7 +5,7 @@ import 'package:flutter_tutorial/views/pages/profile_page.dart';
 import 'package:flutter_tutorial/views/pages/settings_page.dart';
 import 'package:flutter_tutorial/views/widgets/navbar_widget.dart';
 
-List<Widget> pages = [HomePage(), ProfilePage(), SettingsPage()];
+List<Widget> pages = [HomePage(), ProfilePage()];
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
@@ -36,7 +36,7 @@ class _WidgetTreeState extends State<WidgetTree> {
               // Navigator.pushReplacement( <-- this would replace the current page
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SettingsPage()),
+                MaterialPageRoute(builder: (context) => SettingsPage(title: "Settings")),
               );
             },
             icon: Icon(Icons.settings),
