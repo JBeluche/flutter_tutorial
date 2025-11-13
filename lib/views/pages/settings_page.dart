@@ -34,6 +34,25 @@ class _SettingsPageState extends State<SettingsPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+                ElevatedButton(
+                onPressed: () {
+                 showDialog(context: context, builder: (context) {
+                  return AlertDialog(
+                    title: Text('alert dialog'),
+                    content: Text('alert tet'),
+                    actions: [
+                      FilledButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Close'),
+                      ),
+                    ],
+                  );
+                 });
+                },
+                child: Text('Open dialog'),
+              ),
               ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -44,10 +63,6 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  foregroundColor: Colors.white,
-                ),
                 child: Text('Open snackbar'),
               ),
               DropdownButton(
