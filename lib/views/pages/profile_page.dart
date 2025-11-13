@@ -12,6 +12,7 @@ class _ProfilePageState extends State<ProfilePage> {
   bool? isChecked = false;
   bool isSwitched = false;
   double sliderValue = 0.0;
+  String? menuItem;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -19,6 +20,19 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
+            DropdownButton(
+              value: menuItem,
+              items: [
+                DropdownMenuItem(value: 'e1', child: Text('element one')),
+                DropdownMenuItem(value: 'e2', child: Text('element 2')),
+                DropdownMenuItem(value: 'e3', child: Text('element III')),
+              ],
+              onChanged: (String? value) {
+                setState(() {
+                  menuItem = value;
+                });
+              },
+            ),
             TextField(
               controller: nameController,
               decoration: InputDecoration(
@@ -94,28 +108,12 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               child: Text('click me'),
             ),
-             ElevatedButton(
-              onPressed: () {},
-              child: Text('click me'),
-            ),
-            FilledButton(
-              onPressed: () {},
-              child: Text('click me'),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text('click me'),
-            ),
-            OutlinedButton(
-              onPressed: () {},
-              child: Text('click me'),
-            ),
-            CloseButton(
-              onPressed: () {},
-            ),
-            BackButton(
-              onPressed: () {},
-            ),
+            ElevatedButton(onPressed: () {}, child: Text('click me')),
+            FilledButton(onPressed: () {}, child: Text('click me')),
+            TextButton(onPressed: () {}, child: Text('click me')),
+            OutlinedButton(onPressed: () {}, child: Text('click me')),
+            CloseButton(onPressed: () {}),
+            BackButton(onPressed: () {}),
           ],
         ),
       ),
