@@ -10,7 +10,29 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          Column(children: [HeroWidget()]),
+          HeroWidget(),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsetsGeometry.symmetric(vertical: 10.0),
+            child: Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'This is a card inside the home page.',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                    Text(
+                      'Description of the card content goes here.',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
