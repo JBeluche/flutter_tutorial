@@ -81,11 +81,41 @@ class _ProfilePageState extends State<ProfilePage> {
               splashColor: Colors.teal,
               onTap: () => print('Image Tapped'),
               child: Container(
-                height: 200,
+                height: 50,
                 width: double.infinity,
                 color: Colors.white70,
               ),
-            )
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+              ),
+              child: Text('click me'),
+            ),
+             ElevatedButton(
+              onPressed: () {},
+              child: Text('click me'),
+            ),
+            FilledButton(
+              onPressed: () {},
+              child: Text('click me'),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text('click me'),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              child: Text('click me'),
+            ),
+            CloseButton(
+              onPressed: () {},
+            ),
+            BackButton(
+              onPressed: () {},
+            ),
           ],
         ),
       ),
