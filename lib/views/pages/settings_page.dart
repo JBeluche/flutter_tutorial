@@ -31,103 +31,121 @@ class _SettingsPageState extends State<SettingsPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            DropdownButton(
-              value: menuItem,
-              items: [
-                DropdownMenuItem(value: 'e1', child: Text('element one')),
-                DropdownMenuItem(value: 'e2', child: Text('element 2')),
-                DropdownMenuItem(value: 'e3', child: Text('element III')),
-              ],
-              onChanged: (String? value) {
-                setState(() {
-                  menuItem = value;
-                });
-              },
-            ),
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(
-                labelText: 'Name',
-                border: OutlineInputBorder(),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('This is a snackbar'),
+                      duration: Duration(seconds: 100),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  foregroundColor: Colors.white,
+                ),
+                child: Text('Open snackbar'),
               ),
-              onEditingComplete: () => setState(() {}),
-            ),
-            Text(nameController.text),
+              DropdownButton(
+                value: menuItem,
+                items: [
+                  DropdownMenuItem(value: 'e1', child: Text('element one')),
+                  DropdownMenuItem(value: 'e2', child: Text('element 2')),
+                  DropdownMenuItem(value: 'e3', child: Text('element III')),
+                ],
+                onChanged: (String? value) {
+                  setState(() {
+                    menuItem = value;
+                  });
+                },
+              ),
+              TextField(
+                controller: nameController,
+                decoration: InputDecoration(
+                  labelText: 'Name',
+                  border: OutlineInputBorder(),
+                ),
+                onEditingComplete: () => setState(() {}),
+              ),
+              Text(nameController.text),
 
-            Checkbox.adaptive(
-              tristate: true,
-              value: isChecked,
-              onChanged: (bool? value) {
-                setState(() {
-                  isChecked = value;
-                });
-              },
-            ),
-            CheckboxListTile.adaptive(
-              tristate: true,
-              title: const Text('Accept Terms'),
-              value: isChecked,
-              onChanged: (bool? value) {
-                setState(() {
-                  isChecked = value;
-                });
-              },
-            ),
-            Switch.adaptive(
-              value: isSwitched,
-              onChanged: (bool value) {
-                setState(() {
-                  isSwitched = value;
-                });
-              },
-            ),
-            SwitchListTile.adaptive(
-              value: isSwitched,
-              onChanged: (bool value) {
-                setState(() {
-                  isSwitched = value;
-                });
-              },
-              title: const Text('Enable Notifications'),
-            ),
-            Slider.adaptive(
-              value: sliderValue,
-              divisions: 10,
-              onChanged: (double value) {
-                setState(() {
-                  sliderValue = value;
-                });
-                print(value);
-              },
-              min: 0,
-              max: 100,
-            ),
-            InkWell(
-              splashColor: Colors.teal,
-              onTap: () => print('Image Tapped'),
-              child: Container(
-                height: 50,
-                width: double.infinity,
-                color: Colors.white70,
+              Checkbox.adaptive(
+                tristate: true,
+                value: isChecked,
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value;
+                  });
+                },
               ),
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.teal,
-                foregroundColor: Colors.white,
+              CheckboxListTile.adaptive(
+                tristate: true,
+                title: const Text('Accept Terms'),
+                value: isChecked,
+                onChanged: (bool? value) {
+                  setState(() {
+                    isChecked = value;
+                  });
+                },
               ),
-              child: Text('click me'),
-            ),
-            ElevatedButton(onPressed: () {}, child: Text('click me')),
-            FilledButton(onPressed: () {}, child: Text('click me')),
-            TextButton(onPressed: () {}, child: Text('click me')),
-            OutlinedButton(onPressed: () {}, child: Text('click me')),
-            CloseButton(onPressed: () {}),
-            BackButton(onPressed: () {}),
-          ],
+              Switch.adaptive(
+                value: isSwitched,
+                onChanged: (bool value) {
+                  setState(() {
+                    isSwitched = value;
+                  });
+                },
+              ),
+              SwitchListTile.adaptive(
+                value: isSwitched,
+                onChanged: (bool value) {
+                  setState(() {
+                    isSwitched = value;
+                  });
+                },
+                title: const Text('Enable Notifications'),
+              ),
+              Slider.adaptive(
+                value: sliderValue,
+                divisions: 10,
+                onChanged: (double value) {
+                  setState(() {
+                    sliderValue = value;
+                  });
+                  print(value);
+                },
+                min: 0,
+                max: 100,
+              ),
+              InkWell(
+                splashColor: Colors.teal,
+                onTap: () => print('Image Tapped'),
+                child: Container(
+                  height: 50,
+                  width: double.infinity,
+                  color: Colors.white70,
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.teal,
+                  foregroundColor: Colors.white,
+                ),
+                child: Text('click me'),
+              ),
+              ElevatedButton(onPressed: () {}, child: Text('click me')),
+              FilledButton(onPressed: () {}, child: Text('click me')),
+              TextButton(onPressed: () {}, child: Text('click me')),
+              OutlinedButton(onPressed: () {}, child: Text('click me')),
+              CloseButton(onPressed: () {}),
+              BackButton(onPressed: () {}),
+            ],
+          ),
         ),
       ),
     );
