@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/views/pages/home_page.dart';
 import 'package:flutter_tutorial/views/widget_tree.dart';
-import 'package:flutter_tutorial/views/widgets/here_widget.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -14,13 +13,19 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HeroWidget(),
+            Lottie.asset('assets/lotties/house.json'),
+            Text(
+              'Flutter app',
+              style: TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold, letterSpacing: 50.0),
+            ),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) { return WidgetTree(); },
+                    builder: (context) {
+                      return WidgetTree();
+                    },
                   ),
                 );
               },
