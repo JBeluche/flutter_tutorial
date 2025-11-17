@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/views/widgets/hero_widget.dart';
 
-TextEditingController nameController = TextEditingController();
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,11 +10,23 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+TextEditingController nameController = TextEditingController();
+
+// @override
+// void initState() {
+//   print('LoginPage initState called');
+  //Runs before initial build
+//   super.initState();
+// }
+
   @override
   dispose() {
     nameController.dispose();
     super.dispose();
   }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Login Page')),
