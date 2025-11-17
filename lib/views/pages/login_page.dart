@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/views/widget_tree.dart';
 import 'package:flutter_tutorial/views/widgets/hero_widget.dart';
-
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,19 +10,20 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController controllerEmail = TextEditingController();
+  TextEditingController controllerPassword = TextEditingController();
 
-TextEditingController nameController = TextEditingController();
-
-// @override
-// void initState() {
-//   print('LoginPage initState called');
+  // @override
+  // void initState() {
+  //   print('LoginPage initState called');
   //Runs before initial build
-//   super.initState();
-// }
+  //   super.initState();
+  // }
 
   @override
   dispose() {
-    nameController.dispose();
+    controllerEmail.dispose();
+    controllerPassword.dispose();
     super.dispose();
   }
 
@@ -31,17 +32,48 @@ TextEditingController nameController = TextEditingController();
     return Scaffold(
       appBar: AppBar(title: Text('Login Page')),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             HeroWidget(title: 'Login'),
+            SizedBox(height: 20),
             TextField(
-              controller: nameController,
+              controller: controllerEmail,
               decoration: InputDecoration(
-                labelText: 'Name',
-                border: OutlineInputBorder(),
+                hintText: 'Email',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
               ),
               onEditingComplete: () => setState(() {}),
+            ),
+            SizedBox(height: 10),
+            TextField(
+              controller: controllerPassword,
+              decoration: InputDecoration(
+                hintText: 'Password',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+              ),
+              onEditingComplete: () => setState(() {}),
+            ),
+            SizedBox(height: 20.0),
+            FilledButton(
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 50),
+              ),
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return WidgetTree();
+                    },
+                  ),
+                );
+              },
+              child: Text('Log inside'),
             ),
           ],
         ),
