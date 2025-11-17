@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/data/constants.dart';
-import 'package:flutter_tutorial/views/widgets/here_widget.dart';
+import 'package:flutter_tutorial/views/widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          HeroWidget(),
+          HeroWidget(title: 'Home Page'),
           Container(
             width: double.infinity,
             padding: EdgeInsetsGeometry.symmetric(vertical: 10.0),
