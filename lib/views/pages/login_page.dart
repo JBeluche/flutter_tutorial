@@ -3,8 +3,9 @@ import 'package:flutter_tutorial/views/widget_tree.dart';
 import 'package:flutter_tutorial/views/widgets/hero_widget.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({super.key, required this.title});
 
+final String title;
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -32,47 +33,51 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login Page'),
-      
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            HeroWidget(title: 'Login'),
-            SizedBox(height: 20),
-            TextField(
-              controller: controllerEmail,
-              decoration: InputDecoration(
-                hintText: 'Email',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+      appBar: AppBar(title: Text('Login Page')),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                HeroWidget(title: widget.title),
+                SizedBox(height: 20),
+                TextField(
+                  controller: controllerEmail,
+                  decoration: InputDecoration(
+                    hintText: 'Email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                  ),
+                  onEditingComplete: () => setState(() {}),
                 ),
-              ),
-              onEditingComplete: () => setState(() {}),
-            ),
-            SizedBox(height: 10),
-            TextField(
-              controller: controllerPassword,
-              decoration: InputDecoration(
-                hintText: 'Password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                SizedBox(height: 10),
+                TextField(
+                  controller: controllerPassword,
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                  ),
+                  onEditingComplete: () => setState(() {}),
                 ),
-              ),
-              onEditingComplete: () => setState(() {}),
+                SizedBox(height: 20.0),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                  onPressed: () {
+                    onLoginPressed();
+                  },
+                  child: Text(widget.title),
+                ),
+                SizedBox(height: 50.0),
+              ],
             ),
-            SizedBox(height: 20.0),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50),
-              ),
-              onPressed: () {
-                onLoginPressed();
-              },
-              child: Text('Log inside'),
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -89,8 +94,7 @@ class _LoginPageState extends State<LoginPage> {
           },
         ),
       );
-    }
-    else{
+    } else {
       showDialog(
         context: context,
         builder: (BuildContext context) {

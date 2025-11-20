@@ -9,32 +9,34 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          HeroWidget(title: 'Home Page'),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsetsGeometry.symmetric(vertical: 10.0),
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'This is a card inside the home page.',
-                      style: KTextStyle.titleTextStyle,
-                    ),
-                    Text(
-                      'Description of the card content goes here.',
-                      style: KTextStyle.descriptionText,
-                    ),
-                  ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            HeroWidget(title: 'Home Page'),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsetsGeometry.symmetric(vertical: 10.0),
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'This is a card inside the home page.',
+                        style: KTextStyle.titleTextStyle,
+                      ),
+                      Text(
+                        'Description of the card content goes here.',
+                        style: KTextStyle.descriptionText,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
