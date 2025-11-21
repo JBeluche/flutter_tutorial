@@ -11,6 +11,6 @@ class KTextStyle {
     fontWeight: FontWeight.bold,
   );
     static const TextStyle descriptionText = TextStyle(
-    fontSize: 12.0,
+    fontSize: 16.0,
   );
 }

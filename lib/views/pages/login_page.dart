@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/views/widget_tree.dart';
-import 'package:flutter_tutorial/views/widgets/hero_widget.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -37,11 +37,13 @@ class _LoginPageState extends State<LoginPage> {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
+
             padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                HeroWidget(title: widget.title),
+                Lottie.asset('assets/lotties/house.json', height: 400.0),
+
                 SizedBox(height: 20),
                 TextField(
                   controller: controllerEmail,
@@ -65,8 +67,8 @@ class _LoginPageState extends State<LoginPage> {
                   onEditingComplete: () => setState(() {}),
                 ),
                 SizedBox(height: 20.0),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
+                FilledButton(
+                  style: FilledButton.styleFrom(
                     minimumSize: Size(double.infinity, 50),
                   ),
                   onPressed: () {
