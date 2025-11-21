@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tutorial/data/constants.dart';
 import 'package:flutter_tutorial/data/notifiers.dart';
 import 'package:flutter_tutorial/views/pages/home_page.dart';
 import 'package:flutter_tutorial/views/pages/profile_page.dart';
 import 'package:flutter_tutorial/views/pages/settings_page.dart';
 import 'package:flutter_tutorial/views/widgets/navbar_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 List<Widget> pages = [HomePage(), ProfilePage()];
 
@@ -26,8 +28,12 @@ class _WidgetTreeState extends State<WidgetTree> {
             icon: Icon(
               isDarkModeNotifier.value ? Icons.light_mode : Icons.dark_mode,
             ),
-            onPressed: () {
+            onPressed: () async {
               isDarkModeNotifier.value = !isDarkModeNotifier.value;
+
+              final SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+              await prefs.setBool(KConstants.themeModeKey, isDarkModeNotifier.value);
               setState(() {});
             },
           ),
