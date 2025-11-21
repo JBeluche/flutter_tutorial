@@ -17,7 +17,7 @@ class OnboardingPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Lottie.asset('assets/lotties/house.json', height: 400.0),
+                Lottie.asset('assets/lotties/hi.json', height: 400.0),
                 SizedBox(height: 20.0),
                 Text(
                   'This is a longer sentence so you can see the justification working properly across multiple lines.',

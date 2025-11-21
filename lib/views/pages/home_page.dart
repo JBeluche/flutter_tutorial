@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/data/constants.dart';
+import 'package:flutter_tutorial/views/widgets/container_widget.dart';
 import 'package:flutter_tutorial/views/widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,27 +13,29 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             HeroWidget(title: 'Home Page'),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsetsGeometry.symmetric(vertical: 10.0),
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'This is a card inside the home page.',
-                        style: KTextStyle.titleTextStyle,
-                      ),
-                      Text(
-                        'Description of the card content goes here.',
-                        style: KTextStyle.descriptionText,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            ContainerWidget(
+              title: 'This is a title',
+              description: 'Some descriptions about the end of nothing',
+            ),
+            ContainerWidget(
+              title: 'This is a title',
+              description: 'Some descriptions about the end of nothing',
+            ),
+            ContainerWidget(
+              title: 'This is a title',
+              description: 'Some descriptions about the end of nothing',
+            ),
+            ContainerWidget(
+              title: 'This is a title',
+              description: 'Some descriptions about the end of nothing',
+            ),
+            ContainerWidget(
+              title: 'This is a title',
+              description: 'Some descriptions about the end of nothing',
+            ),
+            ContainerWidget(
+              title: 'This is a title',
+              description: 'Some descriptions about the end of nothing',
             ),
           ],
         ),
