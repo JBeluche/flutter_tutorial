@@ -11,8 +11,8 @@ final String title;
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController controllerEmail = TextEditingController();
-  TextEditingController controllerPassword = TextEditingController();
+  TextEditingController controllerEmail = TextEditingController(text: 'jeremie');
+  TextEditingController controllerPassword = TextEditingController(text: 'beluche');
   String confirmedEmail = 'jeremie';
   String confirmedPassword = 'beluche';
 
@@ -57,8 +57,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 10),
                 TextField(
+                  
                   controller: controllerPassword,
                   decoration: InputDecoration(
+                    
                     hintText: 'Password',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15.0),

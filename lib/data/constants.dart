@@ -14,3 +14,11 @@ class KTextStyle {
     fontSize: 16.0,
   );
 }
+
+
+class KValue {
+  static const String basicLayout = 'Basic layout.';
+  static const String cleanUi = 'Clean UI.';
+  static const String fixBugs = 'fixBugs.';
+  static const String keyConcepts = 'keyConcepts.';
+}
