@@ -16,11 +16,14 @@ class HomePage extends StatelessWidget {
       KValue.fixBugs,
     ];
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 10.0),
             HeroWidget(title: 'Home Page', nextPage: CoursePage(),),
+            SizedBox(height: 5.0),
+
             //There was a colum here before, but three dots works as well...
             ...List.generate(list.length, (index) {
                 return ContainerWidget(
